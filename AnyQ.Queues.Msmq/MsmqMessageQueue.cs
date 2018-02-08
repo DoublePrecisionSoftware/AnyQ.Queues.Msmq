@@ -148,7 +148,7 @@ namespace AnyQ.Queues.Msmq {
         }
 
         /// <summary>
-        /// Returns a specific message from the queue
+        /// Returns a specific message from the queue without removing it from the queue
         /// </summary>
         /// <param name="messageId">Unique Id of message</param>
         public IMessage GetMessage(string messageId) {
