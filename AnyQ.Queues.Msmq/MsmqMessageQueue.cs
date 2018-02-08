@@ -117,6 +117,7 @@ namespace AnyQ.Queues.Msmq {
                 var message = _queue.Receive(RecieveWaitTimeout);
                 OnReceivedMessage(_queue, message);
             } catch (MessageQueueException ex) {
+                // TODO: maybe we should throw here?
                 Trace.TraceError($"Error receiving message on queue {_queue.Id}.{Environment.NewLine}{ex}");
             }
         }

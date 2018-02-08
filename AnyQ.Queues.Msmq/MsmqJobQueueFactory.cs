@@ -4,10 +4,10 @@ using System;
 
 namespace AnyQ.Queues.Msmq {
     public class MsmqJobQueueFactory : IJobQueueFactory {
-        private MsmqMessageQueueFactory _queueFactory;
-        private MsmqMessageFactory _messageFactory;
-        private IPayloadFormatter _payloadFormatter;
-        private IRequestSerializer _requestSerializer;
+        private readonly MsmqMessageQueueFactory _queueFactory;
+        private readonly MsmqMessageFactory _messageFactory;
+        private readonly IPayloadFormatter _payloadFormatter;
+        private readonly IRequestSerializer _requestSerializer;
 
         public MsmqJobQueueFactory(
             IPayloadFormatter payloadFormatter, 
@@ -18,10 +18,6 @@ namespace AnyQ.Queues.Msmq {
             _messageFactory = new MsmqMessageFactory();
             _payloadFormatter = payloadFormatter;
             _requestSerializer = requestSerializer;
-        }
-
-        public JobQueue Create(string queueId) {
-            throw new NotImplementedException("Deprecated");
         }
 
         public JobQueue Create(HandlerConfiguration handlerConfiguration) {
