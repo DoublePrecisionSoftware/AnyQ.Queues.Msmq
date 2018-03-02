@@ -38,14 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AnyQ, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AnyQ.1.2.4\lib\net45\AnyQ.dll</HintPath>
+    <Reference Include="AnyQ, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AnyQ.1.2.5\lib\net45\AnyQ.dll</HintPath>
     </Reference>
-    <Reference Include="AnyQ.Formatters, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AnyQ.Formatters.1.2.4\lib\net45\AnyQ.Formatters.dll</HintPath>
+    <Reference Include="AnyQ.Formatters, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AnyQ.Formatters.1.2.5\lib\net45\AnyQ.Formatters.dll</HintPath>
     </Reference>
-    <Reference Include="AnyQ.Jobs, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AnyQ.Jobs.1.2.4\lib\net45\AnyQ.Jobs.dll</HintPath>
+    <Reference Include="AnyQ.Jobs, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AnyQ.Jobs.1.2.5\lib\net45\AnyQ.Jobs.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>

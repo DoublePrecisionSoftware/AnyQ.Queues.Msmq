@@ -11,8 +11,8 @@ namespace AnyQ.Queues.Msmq {
         /// </summary>
         /// <param name="bodyStream"><see cref="Stream"/> containing the message data</param>
         /// <param name="label">Human-readable label for the message</param>
-        public IMessage Create(byte[] body, Encoding encoding, string label) {
-            return new MsmqMessage(new MemoryStream(body), encoding, label);
+        public IMessage Create(byte[] body, string label) {
+            return new MsmqMessage(new MemoryStream(body), label);
         }
     }
 }

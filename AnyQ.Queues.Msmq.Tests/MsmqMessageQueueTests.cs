@@ -42,7 +42,7 @@ namespace AnyQ.Queues.Msmq.Tests {
         }
 
         private IMessage SendTestMessage() {
-            return _sut.Send(new MsmqMessage(new MemoryStream(Encoding.UTF8.GetBytes("test")), Encoding.UTF8, "Test Message"));
+            return _sut.Send(new MsmqMessage(new MemoryStream(Encoding.UTF8.GetBytes("test")), "Test Message"));
         }
 
         [TestMethod]
@@ -59,7 +59,11 @@ namespace AnyQ.Queues.Msmq.Tests {
             Assert.IsNotNull(queueMsg);
             Assert.AreEqual(queueMsg.Id, msg.Id);
             Assert.AreEqual(queueMsg.Label, msg.Label);
-            //Assert.AreEqual(queueMsg.BodyStream, msg.BodyStream); // TODO
+            using (var reader = new StreamReader(queueMsg.BodyStream)) {
+                var body = reader.ReadToEnd();
+                var bodyBytes = Encoding.UTF8.GetBytes(body);
+                CollectionAssert.AreEqual(bodyBytes, msg.Body);
+            }
         }
 
         [TestMethod]

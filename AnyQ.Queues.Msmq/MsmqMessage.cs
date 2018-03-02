@@ -10,8 +10,6 @@ namespace AnyQ.Queues.Msmq {
     public class MsmqMessage : IMessage {
 
         private readonly Message _message;
-        private readonly Encoding _encoding;
-        private byte[] _body;
 
         /// <summary>
         /// Initialize a new instance of the <see cref="MsmqMessage"/> with the data <see cref="Stream"/> and label
@@ -19,7 +17,7 @@ namespace AnyQ.Queues.Msmq {
         /// <param name="bodyStream"><see cref="Stream"/> containing the message data</param>
         /// <param name="label">Human-readable label for the message</param>
         /// <exception cref="ArgumentNullException" />
-        public MsmqMessage(Stream bodyStream, Encoding encoding, string label) {
+        public MsmqMessage(Stream bodyStream, string label) {
             if (bodyStream == null) {
                 throw new ArgumentNullException(nameof(bodyStream));
             }
@@ -28,7 +26,6 @@ namespace AnyQ.Queues.Msmq {
                 BodyStream = bodyStream,
                 Label = label
             };
-            _encoding = encoding;
         }
 
         /// <summary>
@@ -55,15 +52,10 @@ namespace AnyQ.Queues.Msmq {
         /// </summary>
         public byte[] Body {
             get {
-                if (_body != null) {
-                    return _body;
-                }
-                using (var reader = new StreamReader(_message.BodyStream)) {
-                    _body = _encoding.GetBytes(reader.ReadToEnd());
-                    return _body;
-                }
+                return((MemoryStream)_message.BodyStream).ToArray();
             }
         }
+
         /// <summary>
         /// Create a new <see cref="Message"/> instance from this object
         /// </summary>

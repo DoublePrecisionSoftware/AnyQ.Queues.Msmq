@@ -11,7 +11,7 @@ namespace AnyQ.Queues.Msmq {
         /// Initializes a new instance of the <see cref="MsmqMessageQueueFactory"/> class
         /// </summary>
         /// <param name="accessControl">List of access controls for created queues</param>
-        public MsmqMessageQueueFactory(AccessControlList accessControl) {
+        public MsmqMessageQueueFactory(AccessControlList accessControl = null) {
             _accessControl = accessControl;
         }
 
