@@ -1,6 +1,5 @@
 ﻿using AnyQ.Formatters;
 using AnyQ.Jobs;
-using System;
 
 namespace AnyQ.Queues.Msmq {
     /// <summary>

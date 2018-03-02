@@ -42,7 +42,7 @@ namespace AnyQ.Queues.Msmq.Tests {
         }
 
         private IMessage SendTestMessage() {
-            return _sut.Send(new MsmqMessage(new MemoryStream(Encoding.UTF8.GetBytes("test")), "Test Message"));
+            return _sut.Send(new MsmqMessage(new MemoryStream(Encoding.UTF8.GetBytes("test")), Encoding.UTF8, "Test Message"));
         }
 
         [TestMethod]
